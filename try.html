@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="tictac.css">
+   
+
+</head>
+
+<body>
+   
+    <button id="restart">restart</button>
+    <div class="tablediv">
+        <table class="table">
+            <tr>
+                <td id="td1"></td>
+                <td id="td2"></td>
+                <td id="td3"></td>
+            </tr>
+
+            <tr>
+                <td id="td4"></td>
+                <td id="td5"></td>
+                <td id="td6"></td>
+            </tr>
+            <tr>
+                <td id="td7"></td>
+                <td id="td8"></td>
+                <td id="td9"></td>
+
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        let move = 1;
+         let start = true;
+         
+        $(document).ready(function () {
+            $("table tr td").click(function () {
+                if ($(this).text() == "" && start) {
+
+                    if ((move % 2) == 1) {
+                       $(this).append("x")
+                        }
+
+                    
+                    else {
+                        $(this).append("o")
+                    } 
+                    move++;
+                }
+                });
+        });
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+                // if ((a[0] == a[1]) && (a[1] == a[2])) {
+                //     if (a[0] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+
+                // if ((a[3] == a[4]) && (a[4] == a[5])) {
+                //     if (a[3] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+                // if ((a[6] == a[7]) && (a[7] == a[8])) {
+                //     if (a[6] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+                // if ((a[0] == a[3]) && (a[3] == a[6])) {
+                //     if (a[0] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+                // if ((a[1] == a[4]) && (a[4] == a[7])) {
+                //     if (a[1] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+                // if ((a[2] == a[5]) && (a[5] == a[8])) {
+                //     if (a[2] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+                // if ((a[0] == a[4]) && (a[4] == a[8])) {
+                //     if (a[0] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+                // }
+                // if ((a[2] == a[4]) && (a[4] == a[6])) {
+                //     if (a[2] == "x") {
+                //         alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                //     }
+                //     else {
+                //         alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                //     }
+
+
+                // }
+    
+        
+                 
+
+        
+
+    </script>
+</body>
+
+</html>

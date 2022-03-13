@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <!-- <link rel="stylesheet" href="main.css"> -->
+
+    <style>
+        /* #mydiv{
+            text-align: center;
+            background-color: rgb(193, 170, 236);
+            border-radius: 30px;
+            font-size: 45px;
+            width: 350px;
+            margin: auto;
+        } */
+
+        table,
+        tr,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 50px;
+
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="mydiv">Tic Tac Toe Game</div>
+    <button>Start</button>
+    <table>
+        <tr>
+            <td id="td1"></td>
+            <td id="td2"></td>
+            <td id="td3"></td>
+        </tr>
+
+        <tr>
+            <td id="td4"></td>
+            <td id="td5"></td>
+            <td id="td6"></td>
+        </tr>
+        <tr>
+            <td id="td7"></td>
+            <td id="td8"></td>
+            <td id="td9"></td>
+
+        </tr>
+    </table>
+
+    <div id="result"></div>
+
+    <script>
+        let move = 1;
+        let start = true;
+
+        $(document).ready(function () {
+            $('table tr td').click(function () {
+                if ($(this).text() == "" && start) {
+                    if ((move % 2) == 1) {
+                        $(this).append("x")
+   
+                    }
+                    else {
+ 
+                         $(this).append("o")
+                        
+                    }
+                    move++;
+                }
+            });
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

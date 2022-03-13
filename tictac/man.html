@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/tictac.css">
+   <style>
+       input{
+           height: 40px;
+           width: 40px;
+          margin: auto;
+       }
+   </style>
+
+</head>
+
+<body>
+    <div id="mydiv">Tic Tac Toe Game</div>
+    <button id="restart">Restart</button>
+    <button id="div1">O</button>
+    <button id="div2">x</button>
+    <!-- <div id="mydiv1" style="height: 130px; width: 30px;background-color: rgb(250, 243, 243);"></div>
+    <div id="mydiv2" style="height: 130px; width: 30px;background-color: rgb(249, 249, 253);"></div>
+ -->
+
+ <input type="text" id="input1" placeholder="play 1">
+ <input  type="text" id="input2" placeholder="play 2">
+
+    <div class="tablediv">
+        <table class="table">
+            <tr>
+                <td id="td1"></td>
+                <td id="td2"></td>
+                <td id="td3"></td>
+            </tr>
+
+            <tr>
+                <td id="td4"></td>
+                <td id="td5"></td>
+                <td id="td6"></td>
+            </tr>
+            <tr>
+                <td id="td7"></td>
+                <td id="td8"></td>
+                <td id="td9"></td>
+
+            </tr>
+        </table>
+
+    </div>
+
+
+    <script>
+        let move = 1;
+        
+        let myid = 0;
+        let p = 0;
+        let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      
+       
+
+
+        $("#div1").click(function () {
+            move = 2;
+           
+            $("#div1").hide(1000);
+            $("#div2").hide(1000);
+            return move;
+            console.log(move)
+
+        })
+        $("#div2").click(function () {
+
+            $("#div1").hide();
+            $("#div2").hide();  
+
+        })
+
+
+        $(document).ready(function () {
+
+            $("table tr td").click(function () {
+                let start = true;
+                if ($(this).text() == "" && start) {
+            
+                    if ((move % 2) == 1) {
+                        let b = $(this).append("x").attr('id');
+                        let path = b.split("");
+                        let paths = path[path.length - 1]
+                        let set = paths.replace(paths, "x")
+
+                        if (set != null) {
+                            for (i = 0; i < a.length; i++) {
+                                if (a[i] == paths) {
+
+                                    a[i] = set;
+
+
+                                }
+                            }
+
+                        }
+
+                    }
+                    else {
+                        let b = $(this).append("o").attr('id');
+                        let path = b.split("");
+                        let paths = path[path.length - 1]
+                        let set = paths.replace(paths, "o")
+
+                        if (set != null) {
+                            for (i = 0; i < a.length; i++) {
+                                if (a[i] == paths) {
+
+                                    a[i] = set;
+                                    myid++
+                                }
+                            }
+                            ;
+                        }
+
+                    }
+
+                    let dog = $(this).text();
+                    
+                    if(dog=="o"){
+                        console.log(dog);
+                        $('#input1').focus().text("p1").css("color","red");
+                    }
+                   else if (dog=="x"){
+                    $('#input2').focus().text("p1").css("color","red");
+                   }
+
+
+
+                    $("#restart").click(function () {
+
+                        a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                        move = 1;
+
+                        $('table tr td').empty();
+                        for (i = 0; i < a.length; i++) {
+                            a[i] == "";
+                        }
+                        console.log(a)
+
+                        let dog = $(this).text();
+                    if(dog=="o"){
+                        console.log(dog);
+                        $('#input1').focus().text("p1").css("color","red");
+                    }
+                   else if (dog=="x"){
+                    $('#input2').focus().text("p1").css("color","red");
+                   }
+
+
+                        $("#div1").show();
+                        $("#div2").show();
+
+                    });
+
+                    move++;
+                }
+
+
+                if (("table tr td") != null) {
+
+                    if ((a[0] == a[1]) && (a[1] == a[2])) {
+                        if (a[0] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+
+                    }
+
+
+
+                    if ((a[3] == a[4]) && (a[4] == a[5])) {
+                        if (a[3] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+                    }
+                    if ((a[6] == a[7]) && (a[7] == a[8])) {
+                        if (a[6] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+                    }
+                    if ((a[0] == a[3]) && (a[3] == a[6])) {
+                        if (a[0] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+                    }
+                    if ((a[1] == a[4]) && (a[4] == a[7])) {
+                        if (a[1] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+                    }
+                    if ((a[2] == a[5]) && (a[5] == a[8])) {
+                        if (a[2] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+                    }
+                    if ((a[0] == a[4]) && (a[4] == a[8])) {
+                        if (a[0] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+                    }
+                    if ((a[2] == a[4]) && (a[4] == a[6])) {
+                        if (a[2] == "x") {
+                            alert("You Won..player one" + "..." + "✨🙌💕✌🙌");
+                        }
+                        else {
+                            alert("You Won..player two" + "..." + "✨🙌💕✌🙌");
+                        }
+
+                    }
+
+
+                }
+
+               
+
+            });
+
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>
